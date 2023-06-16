@@ -36,17 +36,13 @@ cd ~
 git clone https://github.com/p4lang/p4app-switchML.git
 ```
 
-Install p4app-switchML client library along with its dependencies:
+Build all p4app-switchML components along with their dependencies:
 
 ```bash
 sudo apt install -y gcc g++ make build-essential libboost-program-options-dev libgoogle-glog-dev
-cd ~/p4app-switchML/dev_root/client_lib/
-make
+cd ~/p4app-switchML/dev_root/
+make VCL=0  # disables using vectorclass library as there are problems with compiling it
 ```
 
-FIXME
 
-```
-/home/p4/p4app-switchML/dev_root/client_lib/../client_lib/src/prepostprocessors/cpu_exponent_quantizer_ppp.cc:31:10: fatal error: vectorclass.h: No such file or directory
-   31 | #include "vectorclass.h"
-```
+
